@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271ddc613f399714cabc22c3156114c9, type: 3}
+  m_Name: Tree Item 2
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 09fc7b869bd06cd4e91cc586ace91518, type: 2}
+  tileClass: {fileID: 11400000, guid: bf5833951789b9a4fb9beee1662cb0ba, type: 2}
+  type: 0
+  actionType: 3
+  range: {x: 5, y: 4}
+  laserRange: {x: 5, y: 4}
+  tileHealth: 50
+  tileMaxHealth: 100
+  toolBlockDamage: 0
+  stackable: 1
+  image: {fileID: -1108207211, guid: 83c86a19e582a6b428d26b42c47986a6, type: 3}

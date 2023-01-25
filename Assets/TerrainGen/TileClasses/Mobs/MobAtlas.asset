@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec38bc5bb0fe4c4ea8179aa2a64a0ee, type: 3}
+  m_Name: MobAtlas
+  m_EditorClassIdentifier: 
+  shroom:
+    name: 
+    mobPrefab: {fileID: 2072507271372979920, guid: ad1874e11241ae54b98065eca560113c, type: 3}
+    maxMobCount: 5
+    mobCount: 0
+    spawnTimer: 0
+  worm:
+    name: 
+    mobPrefab: {fileID: 4502834146182154715, guid: 04362e6bc4c58c342a522769f3daba28, type: 3}
+    maxMobCount: 5
+    mobCount: 0
+    spawnTimer: 0
+  boss:
+    name: 
+    mobPrefab: {fileID: 8498949360705877011, guid: 0099772a0e4e6a64b90a591f8e36f25f, type: 3}
+    maxMobCount: 1
+    mobCount: 0
+    spawnTimer: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05af5bffd12a980419b77f6910bd4680, type: 3}
+  m_Name: CandyWorld
+  m_EditorClassIdentifier: 
+  stone: {fileID: 11400000, guid: 68fceeec18d97384b8e6f636aba690bc, type: 2}
+  dirt: {fileID: 11400000, guid: cb528304f5ed1de42a1145e62ed59399, type: 2}
+  grass: {fileID: 11400000, guid: d2bbc7b41ebd7a84b82203710adac279, type: 2}
+  bottomLog: {fileID: 0}
+  log: {fileID: 11400000, guid: 6f9a091a1bd477449bc795d37fbed681, type: 2}
+  log2: {fileID: 11400000, guid: bf5833951789b9a4fb9beee1662cb0ba, type: 2}
+  leaf: {fileID: 11400000, guid: f0b160da600be9349aa6ccb562d8b81b, type: 2}
+  tallGrass: {fileID: 11400000, guid: ef1b490e85ddf684cb099e3395fe4c8d, type: 2}
+  dirtWall: {fileID: 11400000, guid: 931ececfbd9e71c45a42d957235146a3, type: 2}
+  water: {fileID: 11400000, guid: b5b5898ffdbaffb43a74e41c14533774, type: 2}
+  bottomLayer: {fileID: 11400000, guid: 485ee5887f072494788bbb396f5cfa64, type: 2}
+  torch: {fileID: 0}
+  coal: {fileID: 0}
+  iron: {fileID: 0}
+  gold: {fileID: 0}
+  diamond: {fileID: 0}

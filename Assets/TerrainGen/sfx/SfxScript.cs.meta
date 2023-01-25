@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 38bac197d1fda5342bfdff2e6a8451b7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioSource1: {instanceID: 0}
+  - audioSource2: {instanceID: 0}
+  - audioSource3: {instanceID: 0}
+  - dmg_taken: {fileID: 8300000, guid: 4bfc2e0f6bf94b243abde4204262ecb5, type: 3}
+  - sword_swing1: {fileID: 8300000, guid: fcd95ac9ceca9674d90222993b748eae, type: 3}
+  - sword_swing2: {fileID: 8300000, guid: 276ea23531e9d3a4da340a2f70b87c8d, type: 3}
+  - sword_swing3: {fileID: 8300000, guid: a1919e9f5e3b3bf4ba4ac3f35e3fda36, type: 3}
+  - place_block: {instanceID: 0}
+  - LaserBeam: {fileID: 8300000, guid: d9478058a7ed9ca4a93f8e968359c496, type: 3}
+  - jump: {instanceID: 0}
+  - land: {instanceID: 0}
+  - step_grass1: {fileID: 8300000, guid: 908cbff84e7313544b5dc5a9ebe009c1, type: 3}
+  - step_grass2: {fileID: 8300000, guid: a3429ddd733332940b7f9102ee7f68cf, type: 3}
+  - step_stone1: {fileID: 8300000, guid: 663585e192f662441bd58b957812dcbc, type: 3}
+  - step_stone2: {fileID: 8300000, guid: 67c526c023b5e9945b3085f33e0fe631, type: 3}
+  - death: {fileID: 8300000, guid: 074562697bc32204e97cf20f1444d831, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
