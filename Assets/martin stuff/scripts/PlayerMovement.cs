@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 			animator.SetBool("Run", true);
 		}
 
-		isGrounded = feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && timeSinceLastJump > 0.2;
+		isGrounded = (Physics2D.Raycast(transform.position, Vector2.down, 1.0f, LayerMask.GetMask("Ground"))) && timeSinceLastJump > 0.2;
 
 		if (isGrounded)
 		{
