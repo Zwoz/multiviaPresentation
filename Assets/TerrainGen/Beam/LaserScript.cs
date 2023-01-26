@@ -35,6 +35,9 @@ public class LaserScript : MonoBehaviour
     private Item item;
     public Vector2 laserHitVector;
     public Vector2 endpos;
+
+    public AudioSource audioSource;
+    public AudioClip beam;
     public enum LaserTier
     {
         TierOne,
@@ -50,7 +53,7 @@ public class LaserScript : MonoBehaviour
         for (int i = 0; i < particales.Count; i++)
         {
             particales[i].Stop();
-
+            
         }
         DisableLaser();
 
@@ -81,6 +84,7 @@ public class LaserScript : MonoBehaviour
                     lineRenderer.enabled = true;
                     for (int i = 0; i < particales.Count; i++)
                     {
+
                         particales[i].Play();
 
                     }
@@ -105,6 +109,7 @@ public class LaserScript : MonoBehaviour
                 lineRenderer.enabled = false;
                 for (int i = 0; i < particales.Count; i++)
                 {
+
                     particales[i].Stop();
 
                 }
@@ -171,10 +176,13 @@ public class LaserScript : MonoBehaviour
         if (gloveTier == 1)
         {
             lineRenderer.enabled = true;
-
+            audioSource.clip = beam;
+            audioSource.volume = 0.45f;
+            audioSource.Play();
         }
         else
         {
+            audioSource.Stop();
             lineRenderer.enabled = false;
         }
 

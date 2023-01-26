@@ -85,24 +85,28 @@ public class SfxScript : MonoBehaviour
         if (sfxNum2 == 1)
         {
             audioSource3.clip = step_grass1;
+            audioSource3.volume = 0.3f;
             audioSource3.Play();
         }
 
         if (sfxNum2 == 2)
         {
             audioSource3.clip = step_grass2;
+            audioSource3.volume = 0.3f;
             audioSource3.Play();
         }
 
         if (sfxNum2 == 3)
         {
             audioSource3.clip = step_stone1;
+            audioSource3.volume = 0.3f;
             audioSource3.Play();
         }
 
         if (sfxNum2 == 4)
         {
             audioSource3.clip = step_stone2;
+            audioSource3.volume = 0.3f;
             audioSource3.Play();
         }
     }
@@ -113,4 +117,33 @@ public class SfxScript : MonoBehaviour
         audioSource2.volume = 0.65f;
         audioSource2.Play();
     }
+
+    public void DashSound()
+    {
+        audioSource3.clip = sword_swing1;
+        audioSource3.volume = 0.3f;
+        audioSource3.Play();
+    }
+
+    public void DeathSound()
+    {
+        audioSource3.clip = death;
+        audioSource3.volume = 0.5f;
+        audioSource3.Play();
+    }
+
+    public void JumpSound()
+    {
+        audioSource3.clip = jump;
+        audioSource3.volume = 0.3f;
+        audioSource3.Play();
+    }
+
+    public void LandSound()
+    {
+        audioSource3.clip = step_grass1;
+        audioSource3.volume = 0.25f;
+        audioSource3.Play();
+    }
+
 }
