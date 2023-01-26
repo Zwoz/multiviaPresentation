@@ -37,6 +37,8 @@ public class WormAI : MonoBehaviour
 
     private void Update()
     {
+
+
         // Update the timer
         timer -= Time.deltaTime;
         if (hitPlayerTimer > 0)
@@ -75,6 +77,9 @@ public class WormAI : MonoBehaviour
 
         // Move the worm
         transform.position += (Vector3)direction * speed * Time.deltaTime;
+
+        // Flip sprite if necessary
+        GetComponent<SpriteRenderer>().flipX = direction.x < 0;
     }
 
     // function to detect collision with player

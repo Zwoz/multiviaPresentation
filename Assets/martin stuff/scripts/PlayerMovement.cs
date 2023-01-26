@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] float accelerationAir;
 	[SerializeField] float deacceleration;
 	[SerializeField] float deaccelerationAir;
+	[SerializeField] float climbingSpeed;
 	[Header("jumping")]
 	[SerializeField] float jumpVelocity;
 	[SerializeField] float gravityScale;
@@ -59,6 +60,9 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private string UI;
 	Item item;
 	BuildingSystem buildingSystem;
+	bool climbing = false;
+	float moveInputY;
+
 
 
 	private void Start()
@@ -80,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 	private void Update()
 	{
 		Move();
+		ClimbLadder();
 		if (moveInputX != 0)
 		{
 			facingDirection = moveInputX;
@@ -106,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 			animator.SetBool("Idle", false);
 		}*/
 
-		if (previousPosition != transform.position && moveInputX != 0)
+		if (previousPosition != transform.position && moveInputX != 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack"))
 		{
 			if (rb.velocity.x > 0)
 			{
@@ -151,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
 	void OnMove(InputValue value)
 	{
 		moveInputX = Mathf.Round(value.Get<Vector2>().x);
+		moveInputY = Mathf.Round(value.Get<Vector2>().y);
 		animator.SetBool("Horizontalinput", moveInputX != 0);
 	}
 
@@ -162,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
 		float currentAcceleration;
 		float currentDeacceleration;
 		//sets acceleration values depending on if you are on the ground or not
-		if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+		if (Physics2D.Raycast(transform.position, Vector2.down, 0.55f, LayerMask.GetMask("Ground")) || climbing)
 		{
 			currentAcceleration = acceleration;
 			currentDeacceleration = deacceleration;
@@ -213,8 +219,9 @@ public class PlayerMovement : MonoBehaviour
 		//input buffer so you could jump if you start pressing the button a bit before hitting the ground
 		while (currentBufferTimer <= jumpBufferTime && !hasJumped)
 		{
-			if (Physics2D.Raycast(transform.position, Vector2.down, 1.0f, LayerMask.GetMask("Ground")))
+			if (Physics2D.Raycast(transform.position, Vector2.down, 0.55f, LayerMask.GetMask("Ground")) || climbing)
 			{
+				climbing = false;
 				animator.SetTrigger("Jump");
 				float currentTimer = 0;
 				//while the timer is below max and the jump button is pressed the velocity is set to jump velocity
@@ -249,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
 	IEnumerator Dash()
 	{
+		timeSinceLastDash = 0;
 		//dashing turns gravity off during the dash, sets the player speed to dash speed, then turns gravity back on at the end.
 		//also makes invincible for the dash duration
 		rb.gravityScale = 0;
@@ -306,7 +314,37 @@ public class PlayerMovement : MonoBehaviour
 		attackBuffered = false;
 	}
 
-	public void SetAttackActive()
+    void ClimbLadder()
+    {
+        if (mainCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")) && Mathf.Abs(moveInputY) > 0)
+        {
+            climbing = true;
+        }
+        if (climbing)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Round(moveInputY) * climbingSpeed);
+            rb.gravityScale = 0f;
+        }
+        else
+        {
+            rb.gravityScale = gravityScale;
+        }
+        if (!mainCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        {
+            climbing = false;
+        }
+        animator.SetBool("isClimbing", climbing);
+        if (rb.velocity.y == 0)
+        {
+            animator.SetFloat("animationSpeedMultiplier", 0f);
+        }
+        else
+        {
+            animator.SetFloat("animationSpeedMultiplier", 1f);
+        }
+    }
+
+    public void SetAttackActive()
 	{
 		Attack.SetActive(true);
 		Invoke("SetAttackInactive", 0.1f);

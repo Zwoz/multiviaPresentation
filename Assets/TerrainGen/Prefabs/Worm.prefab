@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 4502834146182154709}
   - component: {fileID: 4502834146182154714}
   - component: {fileID: 3358298902627836364}
-  - component: {fileID: 262349554537330978}
+  - component: {fileID: 1398513444788214576}
+  - component: {fileID: -850915438578070350}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Enemy
@@ -115,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05806b63f014ac3449ddae915b77a961, type: 3}
+  m_Sprite: {fileID: 3024927, guid: e1b70572059f004499e9c245da5ed46f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,18 +140,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0025366843, y: -0.0025366247}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.54, y: 0.63}
+    oldSize: {x: 0.9375, y: 0.3515625}
     newSize: {x: 0.54, y: 0.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.54, y: 0.63}
+  m_Size: {x: 0.9103554, y: 0.37125868}
   m_EdgeRadius: 0
 --- !u!114 &3358298902627836364
 MonoBehaviour:
@@ -164,13 +165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f04ab2906acbfa4c8c7d61dabb911c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   destroyOnDealingDamage: 0
-  targetTag: 
+  targetTag: Player
   dealDamageOnEnter: 0
-  knockback: {x: 0, y: 0}
+  knockback: {x: 2, y: 5}
   knockbackFromParent: 0
---- !u!114 &262349554537330978
+--- !u!114 &1398513444788214576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,10 +180,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 4502834146182154715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560b3a4a3c432b24cbed3e394a36d9b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e377ae051ac4294e82587ab6a8cad28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  changeDirectionTime: 2
-  player: {fileID: 0}
-  detectionRange: 2
+  maxHp: 10
+  currentHP: 10
+  InvincibilityTime: 0
+  healthDisplay: {fileID: 0}
+  invincible: 0
+  invincibleOther: 0
+  hitThisFrame: 0
+  pm: {fileID: 0}
+--- !u!95 &-850915438578070350
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502834146182154715}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b15101dbf258824d9d8249d749c347b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
