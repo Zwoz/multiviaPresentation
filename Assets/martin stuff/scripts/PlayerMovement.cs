@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 			animator.SetBool("Idle", false);
 		}*/
 
-		if (previousPosition != transform.position && moveInputX != 0)
+		if (previousPosition != transform.position && moveInputX != 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack"))
 		{
 			if (rb.velocity.x > 0)
 			{
@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
 		float currentAcceleration;
 		float currentDeacceleration;
 		//sets acceleration values depending on if you are on the ground or not
-		if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+		if (Physics2D.Raycast(transform.position, Vector2.down, 0.55f, LayerMask.GetMask("Ground")) || climbing)
 		{
 			currentAcceleration = acceleration;
 			currentDeacceleration = deacceleration;
@@ -219,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
 		//input buffer so you could jump if you start pressing the button a bit before hitting the ground
 		while (currentBufferTimer <= jumpBufferTime && !hasJumped)
 		{
-			if (Physics2D.Raycast(transform.position, Vector2.down, 1.0f, LayerMask.GetMask("Ground")) || climbing)
+			if (Physics2D.Raycast(transform.position, Vector2.down, 0.55f, LayerMask.GetMask("Ground")) || climbing)
 			{
 				climbing = false;
 				animator.SetTrigger("Jump");
@@ -256,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
 	IEnumerator Dash()
 	{
+		timeSinceLastDash = 0;
 		//dashing turns gravity off during the dash, sets the player speed to dash speed, then turns gravity back on at the end.
 		//also makes invincible for the dash duration
 		rb.gravityScale = 0;
