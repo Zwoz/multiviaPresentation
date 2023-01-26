@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a065b0e5854404dbb4758b5c9c0d1d, type: 3}
   m_Name: c_Dirt
   m_EditorClassIdentifier: 
-  tileName: Dirt
-  <tile>k__BackingField: {fileID: 11400000, guid: 73ddb2142a3892b46bac7a581d7df206, type: 2}
-  tileSprites: []
+  tileName: c_Dirt
+  <tile>k__BackingField: {fileID: 11400000, guid: 19180a5396242f643889f12678b41672, type: 2}
   tileLayer: 0
+  <isIlluminate>k__BackingField: 0

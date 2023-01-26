@@ -37,8 +37,8 @@ MonoBehaviour:
     - {x: 0, y: -1, z: 0}
     - {x: 1, y: -1, z: 0}
     m_RuleTransform: 0
-  item: {fileID: 11400000, guid: cdcb99a660324924c8b4ee45f1a94f72, type: 2}
-  tileClass: {fileID: 11400000, guid: aec88c7545514be4abdfcea6bd41f0e6, type: 2}
+  item: {fileID: 11400000, guid: 2e108802aa8b2d84fb9cb0144dc105fb, type: 2}
+  tileClass: {fileID: 11400000, guid: 857cbfa6d8c717b46be5b7ca89e149b5, type: 2}
   tilesToConnect: []
   alwaysConnect: []
   cantConnectStates: []

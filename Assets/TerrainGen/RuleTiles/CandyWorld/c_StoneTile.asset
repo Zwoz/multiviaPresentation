@@ -12,25 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10beddb4cfe654d974adf766b9c0a6, type: 3}
   m_Name: c_StoneTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: -1696742517, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
+  m_DefaultSprite: {fileID: 1110487470, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -1696742517, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
-    - {fileID: 1437295829, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
-    - {fileID: -347078118, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
-    - {fileID: -915497064, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
-    - {fileID: 401457625, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
-    - {fileID: 510122875, guid: 5bfd1bdd642ca8c4bb65df1385d8e165, type: 3}
+    - {fileID: 1110487470, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
+    - {fileID: -44442165, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
-    m_PerlinScale: 0.319
+    m_PerlinScale: 0.542
     m_Output: 1
     m_ColliderType: 1
-    m_RandomTransform: 0
+    m_RandomTransform: 4
     m_Neighbors: 
     m_NeighborPositions:
     - {x: -1, y: 1, z: 0}
@@ -42,8 +38,8 @@ MonoBehaviour:
     - {x: 0, y: -1, z: 0}
     - {x: 1, y: -1, z: 0}
     m_RuleTransform: 0
-  item: {fileID: 11400000, guid: 783a09e0225931a4cb78fdff7dd520cc, type: 2}
-  tileClass: {fileID: 11400000, guid: 68fceeec18d97384b8e6f636aba690bc, type: 2}
+  item: {fileID: 11400000, guid: 1e405e71e63babb47a144e2b16fea539, type: 2}
+  tileClass: {fileID: 11400000, guid: a2e6fdd4facd27d4aa91eaf3e833594c, type: 2}
   tilesToConnect: []
   alwaysConnect: []
   cantConnectStates: []

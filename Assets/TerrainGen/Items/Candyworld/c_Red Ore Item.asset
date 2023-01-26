@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271ddc613f399714cabc22c3156114c9, type: 3}
+  m_Name: c_Red Ore Item
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 624df3b3d0fb6c34eb0bd4aded83d915, type: 2}
+  tileClass: {fileID: 11400000, guid: 373d593ba354b16419592e8d1d1bc364, type: 2}
+  type: 0
+  actionType: 3
+  range: {x: 5, y: 4}
+  laserRange: {x: 5, y: 4}
+  tileHealth: 100
+  tileMaxHealth: 100
+  toolBlockDamage: 0
+  stackable: 1
+  image: {fileID: -1314813916, guid: 4aad25e3d793780429681253df459b23, type: 3}

@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05af5bffd12a980419b77f6910bd4680, type: 3}
   m_Name: CandyWorld
   m_EditorClassIdentifier: 
-  stone: {fileID: 11400000, guid: 68fceeec18d97384b8e6f636aba690bc, type: 2}
-  dirt: {fileID: 11400000, guid: cb528304f5ed1de42a1145e62ed59399, type: 2}
-  grass: {fileID: 11400000, guid: d2bbc7b41ebd7a84b82203710adac279, type: 2}
+  stone: {fileID: 11400000, guid: a2e6fdd4facd27d4aa91eaf3e833594c, type: 2}
+  dirt: {fileID: 11400000, guid: 7948e3952ae63b24e9f062e0389a721d, type: 2}
+  grass: {fileID: 11400000, guid: 1e50a04c811cb814f8a143d6afc20f54, type: 2}
   bottomLog: {fileID: 0}
-  log: {fileID: 11400000, guid: 6f9a091a1bd477449bc795d37fbed681, type: 2}
-  log2: {fileID: 11400000, guid: bf5833951789b9a4fb9beee1662cb0ba, type: 2}
-  leaf: {fileID: 11400000, guid: f0b160da600be9349aa6ccb562d8b81b, type: 2}
-  tallGrass: {fileID: 11400000, guid: ef1b490e85ddf684cb099e3395fe4c8d, type: 2}
-  dirtWall: {fileID: 11400000, guid: 931ececfbd9e71c45a42d957235146a3, type: 2}
-  water: {fileID: 11400000, guid: b5b5898ffdbaffb43a74e41c14533774, type: 2}
-  bottomLayer: {fileID: 11400000, guid: 485ee5887f072494788bbb396f5cfa64, type: 2}
-  torch: {fileID: 0}
-  coal: {fileID: 0}
-  iron: {fileID: 0}
-  gold: {fileID: 0}
-  diamond: {fileID: 0}
+  log: {fileID: 11400000, guid: 9f8437fa775fdfc4f8efed198bdaac35, type: 2}
+  log2: {fileID: 11400000, guid: f945cb034410e824cb9145d990930902, type: 2}
+  leaf: {fileID: 11400000, guid: a35dc76aa8854f241a49a5ec335bcac5, type: 2}
+  tallGrass: {fileID: 11400000, guid: febade0734937204eb63b8aae4b9f55a, type: 2}
+  dirtWall: {fileID: 11400000, guid: 0b2a4763eb8e0004cba6406a935e83a5, type: 2}
+  water: {fileID: 11400000, guid: 9754f38ebcd5e054ca96d97a41171d44, type: 2}
+  bottomLayer: {fileID: 11400000, guid: 55a3145eba4bb77449b38d56cb0373c9, type: 2}
+  torch: {fileID: 11400000, guid: 857cbfa6d8c717b46be5b7ca89e149b5, type: 2}
+  coal: {fileID: 11400000, guid: 79a443b5f8849d84e90eca6b9ea528d5, type: 2}
+  iron: {fileID: 11400000, guid: 373d593ba354b16419592e8d1d1bc364, type: 2}
+  gold: {fileID: 11400000, guid: 282ca9e821040e842af54a785d767017, type: 2}
+  diamond: {fileID: 11400000, guid: 0b3262e87908ab2478808fd8d3c482a8, type: 2}

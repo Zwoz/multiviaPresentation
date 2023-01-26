@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: c_Iron
   m_EditorClassIdentifier: 
   tileName: Iron
-  <tile>k__BackingField: {fileID: 11400000, guid: 27767bba93dede845bf6281119c305d5, type: 2}
-  tileSprites:
-  - {fileID: 21300000, guid: 24afc5155c92afb4d81b7f9c851294df, type: 3}
+  <tile>k__BackingField: {fileID: 11400000, guid: 624df3b3d0fb6c34eb0bd4aded83d915, type: 2}
   tileLayer: 0
+  <isIlluminate>k__BackingField: 0

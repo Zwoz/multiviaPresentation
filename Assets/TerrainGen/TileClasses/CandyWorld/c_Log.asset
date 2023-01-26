@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a065b0e5854404dbb4758b5c9c0d1d, type: 3}
   m_Name: c_Log
   m_EditorClassIdentifier: 
-  tileName: Log
-  <tile>k__BackingField: {fileID: 11400000, guid: f0643ec5f24e94f439a430acdf2ff007, type: 2}
-  tileLayer: 0
+  tileName: c_Log
+  <tile>k__BackingField: {fileID: 11400000, guid: 228c0422ca242e7469bfb871d331dc92, type: 2}
+  tileLayer: 3
   <isIlluminate>k__BackingField: 0

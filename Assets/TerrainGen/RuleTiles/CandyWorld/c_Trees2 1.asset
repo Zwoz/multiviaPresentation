@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f10beddb4cfe654d974adf766b9c0a6, type: 3}
+  m_Name: c_Trees2 1
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: -1300238787, guid: eeb0b46c7cbe83d4597b809fe0e73041, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: 133628378, guid: eeb0b46c7cbe83d4597b809fe0e73041, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 0200000002000000
+    m_NeighborPositions:
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    m_RuleTransform: 0
+  - m_Id: 2
+    m_Sprites:
+    - {fileID: -1507938199, guid: eeb0b46c7cbe83d4597b809fe0e73041, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 0200000001000000
+    m_NeighborPositions:
+    - {x: 0, y: 1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    m_RuleTransform: 0
+  - m_Id: 1
+    m_Sprites:
+    - {fileID: -1300238787, guid: eeb0b46c7cbe83d4597b809fe0e73041, type: 3}
+    - {fileID: 569828806, guid: eeb0b46c7cbe83d4597b809fe0e73041, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.666
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 3
+    m_Neighbors: 0100000001000000
+    m_NeighborPositions:
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    m_RuleTransform: 0
+  item: {fileID: 11400000, guid: d09361bc4b5d6fb47a2529fa388a44c0, type: 2}
+  tileClass: {fileID: 11400000, guid: f945cb034410e824cb9145d990930902, type: 2}
+  tilesToConnect: []
+  alwaysConnect: []
+  cantConnectStates: []

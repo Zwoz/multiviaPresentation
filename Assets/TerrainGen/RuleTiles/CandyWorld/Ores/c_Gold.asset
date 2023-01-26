@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10beddb4cfe654d974adf766b9c0a6, type: 3}
   m_Name: c_Gold
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 548874554, guid: 36011c78dd2aebb4396645d4d52bed7d, type: 3}
+  m_DefaultSprite: {fileID: 908493971, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -424379345, guid: 36011c78dd2aebb4396645d4d52bed7d, type: 3}
-    - {fileID: -1957828185, guid: 36011c78dd2aebb4396645d4d52bed7d, type: 3}
-    - {fileID: 548874554, guid: 36011c78dd2aebb4396645d4d52bed7d, type: 3}
+    - {fileID: -157039879, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
+    - {fileID: 908493971, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
+    - {fileID: 1097458512, guid: 6e8008673b7e65a4dacbaf168aa34cea, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
-    m_PerlinScale: 0.507
+    m_PerlinScale: 0.627
     m_Output: 1
     m_ColliderType: 1
     m_RandomTransform: 0
@@ -39,8 +39,8 @@ MonoBehaviour:
     - {x: 0, y: -1, z: 0}
     - {x: 1, y: -1, z: 0}
     m_RuleTransform: 0
-  item: {fileID: 11400000, guid: 455c280326f560d4ea0977908d3ec9c9, type: 2}
-  tileClass: {fileID: 11400000, guid: 6f5f0a11ac1b91a46b1b443b44610b05, type: 2}
+  item: {fileID: 11400000, guid: ce579d5d8628a164caf24605295c59e6, type: 2}
+  tileClass: {fileID: 11400000, guid: 282ca9e821040e842af54a785d767017, type: 2}
   tilesToConnect: []
   alwaysConnect: []
   cantConnectStates: []

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271ddc613f399714cabc22c3156114c9, type: 3}
+  m_Name: c_Green Ore Item
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: f9c2981cc372a99419ac8d1fb2444b3d, type: 2}
+  tileClass: {fileID: 11400000, guid: 79a443b5f8849d84e90eca6b9ea528d5, type: 2}
+  type: 0
+  actionType: 1
+  range: {x: 5, y: 4}
+  laserRange: {x: 5, y: 4}
+  tileHealth: 100
+  tileMaxHealth: 100
+  toolBlockDamage: 0
+  stackable: 1
+  image: {fileID: 737224807, guid: 4aad25e3d793780429681253df459b23, type: 3}

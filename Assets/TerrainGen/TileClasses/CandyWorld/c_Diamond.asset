@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a065b0e5854404dbb4758b5c9c0d1d, type: 3}
   m_Name: c_Diamond
   m_EditorClassIdentifier: 
-  tileName: Diamond
-  <tile>k__BackingField: {fileID: 11400000, guid: 2ba304e401174cf40af5f8e8d1a04ac1, type: 2}
-  tileSprites:
-  - {fileID: 21300000, guid: c7f08b07561ca7e4c801c3c93bdce7bc, type: 3}
+  tileName: c_Diamond
+  <tile>k__BackingField: {fileID: 11400000, guid: c32a2a3757cbb2c42a184e71e8c3086f, type: 2}
   tileLayer: 0
+  <isIlluminate>k__BackingField: 0

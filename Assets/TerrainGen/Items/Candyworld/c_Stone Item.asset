@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271ddc613f399714cabc22c3156114c9, type: 3}
+  m_Name: c_Stone Item
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 3b48476b4e055b04cab15c943393c0f2, type: 2}
+  tileClass: {fileID: 11400000, guid: a2e6fdd4facd27d4aa91eaf3e833594c, type: 2}
+  type: 0
+  actionType: 3
+  range: {x: 5, y: 4}
+  laserRange: {x: 5, y: 4}
+  tileHealth: 100
+  tileMaxHealth: 100
+  toolBlockDamage: 0
+  stackable: 1
+  image: {fileID: 1110487470, guid: de39e2368352ba742af00bf436af0c6f, type: 3}

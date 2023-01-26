@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10beddb4cfe654d974adf766b9c0a6, type: 3}
   m_Name: c_GrassTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 80243fba2778d6f44a67dbcc45f0531f, type: 3}
+  m_DefaultSprite: {fileID: 466648151, guid: afc6c301e8131664486e0aefd851aece, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 21300000, guid: 80243fba2778d6f44a67dbcc45f0531f, type: 3}
+    - {fileID: 466648151, guid: afc6c301e8131664486e0aefd851aece, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
     m_RuleTransform: 1
   - m_Id: 1
     m_Sprites:
-    - {fileID: -1324498474, guid: 15fd0cd85bfdcde449b76b8a41e12ce9, type: 3}
+    - {fileID: -424800612, guid: afc6c301e8131664486e0aefd851aece, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -49,10 +49,10 @@ MonoBehaviour:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 1
-  item: {fileID: 11400000, guid: 78de9c31deaf4b04e991987b4716a489, type: 2}
-  tileClass: {fileID: 11400000, guid: d2bbc7b41ebd7a84b82203710adac279, type: 2}
+  item: {fileID: 11400000, guid: e23f72b097db7c14485521366b00b246, type: 2}
+  tileClass: {fileID: 11400000, guid: 1e50a04c811cb814f8a143d6afc20f54, type: 2}
   tilesToConnect:
-  - {fileID: 11400000, guid: 73ddb2142a3892b46bac7a581d7df206, type: 2}
-  - {fileID: 11400000, guid: 589e5e3f826f48047b685583c6afc774, type: 2}
+  - {fileID: 11400000, guid: 19180a5396242f643889f12678b41672, type: 2}
+  - {fileID: 11400000, guid: 14c6e947d532cd14195fe23613eef64c, type: 2}
   alwaysConnect: []
   cantConnectStates: []

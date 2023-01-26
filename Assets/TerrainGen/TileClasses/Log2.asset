@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Log2
   <tile>k__BackingField: {fileID: 11400000, guid: 09fc7b869bd06cd4e91cc586ace91518, type: 2}
-  tileLayer: 0
+  tileLayer: 3
   <isIlluminate>k__BackingField: 0

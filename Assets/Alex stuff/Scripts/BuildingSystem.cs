@@ -15,7 +15,7 @@ public class BuildingSystem : MonoBehaviour
     public Camera mainCamera;
     LaserScript ls;
     [SerializeField] private TileBase highlightTile;
-    [SerializeField] private Tilemap mainTilemap;
+    [SerializeField] private Tilemap[] mainTilemap;
     [SerializeField] private Tilemap highlightTilemap;
     [SerializeField] private GameObject lootPrefab;
     TerrainGeneration tGen;
@@ -32,13 +32,14 @@ public class BuildingSystem : MonoBehaviour
     bool miningDelay;
     private void Start()
     {
+        
         lh = FindObjectOfType<LaserHit>();
         ls = FindObjectOfType<LaserScript>();
         tGen = FindObjectOfType<TerrainGeneration>();
     }
     void Update(){
         item = InventoryManager.instance.GetSelectedItem(false);
-        playerPos = mainTilemap.WorldToCell(transform.position);
+        playerPos = mainTilemap[0].WorldToCell(transform.position);
         if(item != null){
             HighlightTile(item);
         }
@@ -107,7 +108,7 @@ public class BuildingSystem : MonoBehaviour
 
     private Vector3Int GetMouseOnGridPos(){
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int mouseCellPos = mainTilemap.WorldToCell(mousePos);
+        Vector3Int mouseCellPos = mainTilemap[0].WorldToCell(mousePos);
         mouseCellPos.z = 0;
         //Debug.Log("mousePos: " + mousePos);
         //Debug.Log("mouseCellPos: "+ mouseCellPos);
@@ -120,19 +121,26 @@ public class BuildingSystem : MonoBehaviour
 
         if (highlightedTilePos != mouseGridPos){
             highlightTilemap.SetTile(highlightedTilePos, null);
+            for (int i = 0; i < mainTilemap.Length; i++)
+            {
+                if (InRange(playerPos, mouseGridPos, (Vector3Int)currentItem.range))
+                {
+                    if (CheckCondition(mainTilemap[i].GetTile<CustomTile>(mouseGridPos), currentItem))
+                    {
+                        highlightTilemap.SetTile(mouseGridPos, highlightTile);
+                        highlightedTilePos = mouseGridPos;
+                        highlighted = true;
+                    }
+                    else
+                    {
+                        highlighted = false;
+                    }
+                }
+                else
+                {
+                    highlighted = false;
+                }
 
-            if (InRange(playerPos, mouseGridPos, (Vector3Int) currentItem.range)){
-                if (CheckCondition(mainTilemap.GetTile<CustomTile>(mouseGridPos), currentItem)){
-                highlightTilemap.SetTile(mouseGridPos, highlightTile);
-                highlightedTilePos = mouseGridPos;
-                highlighted = true;
-                }
-                else{
-                highlighted = false;
-                }
-            }
-            else {
-                highlighted = false;
             }
             
         }
@@ -164,8 +172,8 @@ public class BuildingSystem : MonoBehaviour
     }
 
     private void build(int x, int y, Item itemToBuild){
-
-        if(tGen.GetTile(0, x, y) == null){  
+        if(tGen.GetTile(0, x, y) == null && tGen.GetTile(3, x, y) == null)
+        {  
         
         InventoryManager.instance.GetSelectedItem(true);
         highlightTilemap.SetTile(highlightedTilePos, null);
@@ -186,52 +194,57 @@ public class BuildingSystem : MonoBehaviour
     IEnumerator MineTile(int x, int y) {
         mining = true;
         Vector3Int position = new Vector3Int((int)ls.laserHitVector.x,(int) ls.laserHitVector.y);
-        CustomTile tile = mainTilemap.GetTile<CustomTile>(position);
-        var heldItem = InventoryManager.instance.GetSelectedItem(false);
-
-        if (tile != null)
+        for (int i = 0; i < mainTilemap.Length; i++)
         {
-
-            while (mining)
+            CustomTile tile = mainTilemap[i].GetTile<CustomTile>(position);
+            var heldItem = InventoryManager.instance.GetSelectedItem(false);
+            if (tile != null)
             {
 
-                if (!isMouseButtonDown)
+                while (mining)
                 {
-                    tile.item.tileHealth = tile.item.tileMaxHealth;
-                    mining = false;
-                    StopAllCoroutines();
-                }
-                if (tile.item.tileHealth > 0 && !miningDelay)
-                {
-                    miningDelay = true;
-                    yield return new WaitForSeconds(0.1f);
-                    tile.item.tileHealth -= heldItem.toolBlockDamage;
-                    miningDelay = false;
 
-                }
-                else if (tile.item.tileHealth <= 0)
-                {
-                    if (tile.tileClass.isIlluminate)
-                        tGen.RemoveTile(tile.tileClass.tileLayer, x, y, true);
+                    if (!isMouseButtonDown)
+                    {
+                        tile.item.tileHealth = tile.item.tileMaxHealth;
+                        mining = false;
+                        StopAllCoroutines();
+                    }
+                    if (tile.item.tileHealth > 0 && !miningDelay)
+                    {
+                        miningDelay = true;
+                        yield return new WaitForSeconds(0.1f);
+                        tile.item.tileHealth -= heldItem.toolBlockDamage;
+                        miningDelay = false;
+
+                    }
+                    else if (tile.item.tileHealth <= 0)
+                    {
+                        if (tile.tileClass.isIlluminate)
+                            tGen.RemoveTile(tile.tileClass.tileLayer, x, y, true);
+                        else
+                            tGen.RemoveTile(tile.tileClass.tileLayer, x, y);
+
+                        Vector3 pos = mainTilemap[i].GetCellCenterWorld(position);
+                        GameObject loot = Instantiate(lootPrefab, pos, Quaternion.identity);
+                        loot.GetComponent<Loot>().Initialize(tile.item);
+                        highlightTilemap.SetTile(position, null);
+                        highlighted = false;
+                        tile.item.tileHealth = tile.item.tileMaxHealth;
+                        mining = false;
+
+                    }
                     else
-                        tGen.RemoveTile(tile.tileClass.tileLayer,x, y);
+                        yield return new WaitForSeconds(0.2f);
 
-                    Vector3 pos = mainTilemap.GetCellCenterWorld(position);
-                    GameObject loot = Instantiate(lootPrefab, pos, Quaternion.identity);
-                    loot.GetComponent<Loot>().Initialize(tile.item);
-                    highlightTilemap.SetTile(position, null);
-                    highlighted = false;
-                    tile.item.tileHealth = tile.item.tileMaxHealth;
-                    mining = false;
 
                 }
-                else
-                    yield return new WaitForSeconds(0.2f);
-
-
             }
-        }
 
+        }
+        
+
+   
     }
 
 }

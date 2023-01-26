@@ -26,7 +26,8 @@ public class LaserScript : MonoBehaviour
 
     public Transform rayCastPoint;
     private Quaternion rotation;
-    [SerializeField] LayerMask layerMask;
+    [SerializeField] LayerMask layerMask1;
+    [SerializeField] LayerMask layerMask2;
     [SerializeField] List<ParticleSystem> particales;
     public LaserTier state;
     public int gloveTier = 1;
@@ -181,8 +182,8 @@ public class LaserScript : MonoBehaviour
 
     void UpdateLaser()
     {
-        // using old input system just for this, I cba checking how to do it with the new one
-        if (gloveTier == 1)
+            // using old input system just for this, I cba checking how to do it with the new one
+            if (gloveTier == 1)
         {
             item = InventoryManager.instance.GetSelectedItem(false);
             lineRenderer.SetPosition(0, (Vector2)glovePos.position);
@@ -190,8 +191,8 @@ public class LaserScript : MonoBehaviour
             lineRenderer.SetPosition(1, mousePos);
             Vector3 direction = mousePos - (Vector2)transform.position;
             Vector3 direction2 = mousePos - (Vector2)transform.position;
-            RaycastHit2D hit = Physics2D.Raycast(glovePos.position, direction2.normalized, direction2.magnitude, layerMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(glovePos.position, direction, castDistance, layerMask);
+            RaycastHit2D hit = Physics2D.Raycast(glovePos.position, direction2.normalized, direction2.magnitude, layerMask1);
+            RaycastHit2D hit2 = Physics2D.Raycast(glovePos.position, direction2.normalized, direction2.magnitude, layerMask2);
             if (hit)
             {
                 lineRenderer.SetPosition(1, hit.point);
@@ -210,6 +211,25 @@ public class LaserScript : MonoBehaviour
                 laserHitVector = tilePos;
                 Debug.DrawRay((Vector2)glovePos.position, direction, Color.green);
                 
+            }
+            if (hit2)
+            {
+                lineRenderer.SetPosition(1, hit2.point);
+                Vector2 modifiedHitPoint2 = hit2.point;
+                float angle = Vector2.SignedAngle(new Vector2(0.5f, -0.5f), direction);
+                //print(angle);
+                //print(tilePos);
+                if (angle < 0)
+                {
+                    modifiedHitPoint2.x -= 0.1f;
+                    modifiedHitPoint2.y -= 0.1f;
+                }
+                Vector3Int tile = map.layoutGrid.WorldToCell(modifiedHitPoint2);
+                Vector3 tilePos = map.layoutGrid.GetCellCenterLocal(tile);
+                endpos = glovePos.position + direction;
+                laserHitVector = tilePos;
+                Debug.DrawRay((Vector2)glovePos.position, direction, Color.green);
+
             }
             endVFX.transform.position = lineRenderer.GetPosition(1);
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a065b0e5854404dbb4758b5c9c0d1d, type: 3}
   m_Name: c_Gold
   m_EditorClassIdentifier: 
-  tileName: Gold
-  <tile>k__BackingField: {fileID: 11400000, guid: eef31472b668182468df552d117538d5, type: 2}
-  tileSprites: []
+  tileName: c_Gold
+  <tile>k__BackingField: {fileID: 11400000, guid: 454f4b96ac98ad14c9b238f9890c94cd, type: 2}
   tileLayer: 0
+  <isIlluminate>k__BackingField: 0

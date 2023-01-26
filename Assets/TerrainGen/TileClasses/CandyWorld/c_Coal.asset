@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a065b0e5854404dbb4758b5c9c0d1d, type: 3}
   m_Name: c_Coal
   m_EditorClassIdentifier: 
-  tileName: Coal
-  <tile>k__BackingField: {fileID: 11400000, guid: 9271fae5d8e75fb4396f2e636a0a1d24, type: 2}
-  tileSprites:
-  - {fileID: 21300000, guid: 5a5d598db6e23054c97473e51082ad3c, type: 3}
+  tileName: c_Coal
+  <tile>k__BackingField: {fileID: 11400000, guid: f9c2981cc372a99419ac8d1fb2444b3d, type: 2}
   tileLayer: 0
+  <isIlluminate>k__BackingField: 0
