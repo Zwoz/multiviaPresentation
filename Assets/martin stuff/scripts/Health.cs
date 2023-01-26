@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public int maxHp;
-    public int currentHP;
+    public float currentHP;
+    public Slider slider;
     [SerializeField] float InvincibilityTime;
     [SerializeField] TextMeshProUGUI healthDisplay;
 
@@ -23,7 +24,8 @@ public class Health : MonoBehaviour
         //if this script is on the player it updates the health display
         if (gameObject.tag == "Player")
         {
-            healthDisplay.text = currentHP.ToString();
+            //healthDisplay.text = currentHP.ToString();
+            slider.value = currentHP;
             isPlayer = true;
         }
         if (invincibleRecentlyHit || invincibleOther)
