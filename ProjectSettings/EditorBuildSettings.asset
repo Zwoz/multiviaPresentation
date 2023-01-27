@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Alex stuff/Scenes/Menu.unity
     guid: f9c79ab698865674bb60d4dcc668d4d6
   - enabled: 1
+    path: Assets/TerrainGen/Scenes/TerrainGenScene 1.unity
+    guid: c9785b17cc937d740bc1f89e00554f29
+  - enabled: 1
     path: Assets/TerrainGen/Scenes/CandyWorld.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

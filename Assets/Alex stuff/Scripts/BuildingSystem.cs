@@ -18,8 +18,12 @@ public class BuildingSystem : MonoBehaviour
     [SerializeField] private Tilemap[] mainTilemap;
     [SerializeField] private Tilemap highlightTilemap;
     [SerializeField] private GameObject lootPrefab;
+    [SerializeField] private GameObject portalPrefab;
+
     TerrainGeneration tGen;
 
+    public AudioSource audioSource;
+    public AudioClip beam;
 
     private Vector3Int playerPos;
     private Vector3Int highlightedTilePos;
@@ -59,12 +63,15 @@ public class BuildingSystem : MonoBehaviour
     {
         if (action.isPressed)
         {
+            audioSource.clip = beam;
+            audioSource.volume = 0.45f;
+            audioSource.Play();
             isMouseButtonDown = true;
         }
         else
         {
             isMouseButtonDown = false;
-
+            audioSource.Stop();
         }
     }
 
@@ -83,6 +90,13 @@ public class BuildingSystem : MonoBehaviour
                 //highlightedTilePos.x, highlightedTilePos.y
                 StartCoroutine(MineTile((int)ls.laserHitVector.x, (int)ls.laserHitVector.y));
                 //Destroy(highlightedTilePos);
+            }
+            else if (item.type == ItemType.Consumable)
+            {
+                if(GameObject.FindObjectOfType<Magnet>() == null)
+                    Instantiate(portalPrefab, new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), Quaternion.identity);
+                else
+                    return;
             }
 
         }

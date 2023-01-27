@@ -36,8 +36,6 @@ public class LaserScript : MonoBehaviour
     public Vector2 laserHitVector;
     public Vector2 endpos;
 
-    public AudioSource audioSource;
-    public AudioClip beam;
     public enum LaserTier
     {
         TierOne,
@@ -176,13 +174,11 @@ public class LaserScript : MonoBehaviour
         if (gloveTier == 1)
         {
             lineRenderer.enabled = true;
-            audioSource.clip = beam;
-            audioSource.volume = 0.45f;
-            audioSource.Play();
+
         }
         else
         {
-            audioSource.Stop();
+
             lineRenderer.enabled = false;
         }
 
@@ -193,6 +189,7 @@ public class LaserScript : MonoBehaviour
             // using old input system just for this, I cba checking how to do it with the new one
             if (gloveTier == 1)
         {
+
             item = InventoryManager.instance.GetSelectedItem(false);
             lineRenderer.SetPosition(0, (Vector2)glovePos.position);
             startVFX.transform.position = (Vector2)glovePos.position;
