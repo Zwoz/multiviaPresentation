@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Alex stuff/Scenes/Menu.unity
     guid: f9c79ab698865674bb60d4dcc668d4d6
   - enabled: 1

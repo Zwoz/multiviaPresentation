@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 
 public class Magnet : MonoBehaviour
@@ -17,6 +18,7 @@ public class Magnet : MonoBehaviour
             if (collision.GetComponent<Rigidbody2D>() is Rigidbody2D rigidbody)
             {
                 affectedBodies.Add(rigidbody);
+                SceneManager.LoadScene("CandyWorld");
             }
         }
 
